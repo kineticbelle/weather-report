@@ -10,6 +10,31 @@
     <link rel="stylesheet" href="styles/index.css" />
 </head>
 <body>
+    <header>
+        <h1 id="weather-header">Weather Report</h1>
+    </header>
+
+    <main>
+        <section id="greeting">
+            <h2 id="greeting-message">For the lovely city of <span id="current-city">Seattle</span>!</h2>
+        </section>
+
+        <section id="temperature">
+            <h3>Temperature</h3>
+            <div>
+                <button id="decrease-temp">-</button>
+                <span id="temp-number">57</span>°F
+                <button id="increase-temp">+</button>
+            </div>
+        </section>
+
+        <section id="landscape">
+            <h3>Landscape</h3>
+            <div id="landscape-img"></div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./src/index.js"></script>
 </body>
 </html>
