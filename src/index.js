@@ -40,8 +40,9 @@ const changeTempColor = () => {
 //Wave 3 & 4
 const currentCity = document.getElementById('current-city');
 const updateCurrentCity = document.getElementById('city-name');
+const cityButton = document.getElementById('city-button');
 
-updateCurrentCity.addEventListener('input',()=>{
+cityButton.addEventListener('click',()=>{
     currentCity.textContent = updateCurrentCity.value;
     getCityRealTimeTemp(updateCurrentCity.value);
 })
@@ -50,12 +51,13 @@ updateCurrentCity.addEventListener('input',()=>{
 //http://127.0.0.1:5000/weather?lat=47.6038321&lon=-122.330062
 //http://127.0.0.1:5000/location?q=Seattle
 
+const realtimeTemperature = document.getElementById('realtime-temperature');
 const kelvinToFahrenheit = (k) => Math.round((k - 273.15) * 9/5 + 32);
 const getCityRealTimeTemp = (city) => {
     axios
         .get('http://127.0.0.1:5000/location', {
             params: {
-                q: currentCity.textContent,
+                q: city, 
             },
         })
 
@@ -80,10 +82,16 @@ const getCityRealTimeTemp = (city) => {
         .then((response) => {
             const cityTemp = kelvinToFahrenheit(response.data.main.temp); 
             //console.log(`temp = ${cityTemp}`)
+            currentTemp = cityTemp;
             tempNumber.textContent = cityTemp;
+            changeTempColor();
         })
 
         .catch((error) => {
             console.log('error!', error.response.data);
         });
-    }
+}
+
+realtimeTemperature.addEventListener('click',()=>{
+    getCityRealTimeTemp(currentCity.textContent);
+})
