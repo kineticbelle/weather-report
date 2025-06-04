@@ -95,3 +95,14 @@ const getCityRealTimeTemp = (city) => {
 realtimeTemperature.addEventListener('click',()=>{
     getCityRealTimeTemp(currentCity.textContent);
 })
+
+//Wave 5
+const skySelect = document.getElementById('sky-select');
+const skyEmoji = document.getElementById('sky-emoji');
+
+skySelect.addEventListener("change", (event) => {
+    if(event.target.value == 'Sunny'){skyEmoji.textContent = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';}
+    else if(event.target.value == 'Cloudy'){skyEmoji.textContent = '☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️';}
+    else if (event.target.value == 'Rainy'){skyEmoji.textContent = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';}
+    else {skyEmoji.textContent = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨';}
+});
