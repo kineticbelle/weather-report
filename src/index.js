@@ -39,12 +39,12 @@ const changeTempColor = () => {
 
 //Wave 3 & 4
 const currentCity = document.getElementById('current-city');
-const updateCurrentCity = document.getElementById('city-name');
+const cityName = document.getElementById('city-name');
 const cityButton = document.getElementById('city-button');
 
 cityButton.addEventListener('click',()=>{
-    currentCity.textContent = updateCurrentCity.value;
-    getCityRealTimeTemp(updateCurrentCity.value);
+    currentCity.textContent = cityName.value;
+    getCityRealTimeTemp(cityName.value);
 })
 
 //Wave 4
@@ -105,4 +105,13 @@ skySelect.addEventListener("change", (event) => {
     else if(event.target.value == 'Cloudy'){skyEmoji.textContent = '☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️';}
     else if (event.target.value == 'Rainy'){skyEmoji.textContent = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';}
     else {skyEmoji.textContent = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨';}
+});
+
+//Wave 6
+const resetCity = document.getElementById('reset-city');
+
+resetCity.addEventListener('click', () => {
+    currentCity.textContent = 'Seattle';
+    cityName.value = ''; 
+    getCityRealTimeTemp('Seattle');
 });
