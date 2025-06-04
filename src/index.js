@@ -1,5 +1,7 @@
+//Wave 1
 "use strict";
 
+//Wave 2
 let currentTemp = 57;
 const tempNumber = document.getElementById('temp-number');
 const landscapeImg = document.getElementById('landscape-img');
@@ -15,7 +17,6 @@ document.getElementById('decrease-temp').addEventListener('click',()=>{
     tempNumber.textContent = currentTemp;
     changeTempColor();
 })
-
 
 const changeTempColor = () => {
     if (currentTemp >=80) {
@@ -36,9 +37,53 @@ const changeTempColor = () => {
     }
 }
 
+//Wave 3 & 4
 const currentCity = document.getElementById('current-city');
 const updateCurrentCity = document.getElementById('city-name');
 
 updateCurrentCity.addEventListener('input',()=>{
     currentCity.textContent = updateCurrentCity.value;
+    getCityRealTimeTemp(updateCurrentCity.value);
 })
+
+//Wave 4
+//http://127.0.0.1:5000/weather?lat=47.6038321&lon=-122.330062
+//http://127.0.0.1:5000/location?q=Seattle
+
+const kelvinToFahrenheit = (k) => Math.round((k - 273.15) * 9/5 + 32);
+const getCityRealTimeTemp = (city) => {
+    axios
+        .get('http://127.0.0.1:5000/location', {
+            params: {
+                q: currentCity.textContent,
+            },
+        })
+
+        .then((response) => {
+            const firstResponse = response.data[0]; 
+
+            const lat = firstResponse.lat;
+            const lon = firstResponse.lon;
+
+            // console.log(`lat = ${lat}`)
+            // console.log(`lon = ${lon}`)
+
+            return axios.get('http://127.0.0.1:5000/weather', {
+                params: {
+                    lat: lat,
+                    lon: lon,
+                    // units: 'imperial',
+                },
+            });
+        })
+
+        .then((response) => {
+            const cityTemp = kelvinToFahrenheit(response.data.main.temp); 
+            //console.log(`temp = ${cityTemp}`)
+            tempNumber.textContent = cityTemp;
+        })
+
+        .catch((error) => {
+            console.log('error!', error.response.data);
+        });
+    }
