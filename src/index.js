@@ -2,7 +2,7 @@
 "use strict";
 
 //Wave 2
-let currentTemp = 57;
+let currentTemp = 0;
 const tempNumber = document.getElementById('temp-number');
 const landscapeImg = document.getElementById('landscape-img');
 
@@ -26,7 +26,7 @@ const changeTempColor = () => {
         tempNumber.style.color = 'orange';
         landscapeImg.src = 'assets/Humid.jpeg';
     } else if (currentTemp >= 60) {
-        tempNumber.style.color = 'yellow';
+        tempNumber.style.color = 'blue';
         landscapeImg.src = 'assets/perfect 2.jpg';
     } else if (currentTemp >= 50) {
         tempNumber.style.color ='green';
@@ -115,3 +115,7 @@ resetCity.addEventListener('click', () => {
     cityName.value = ''; 
     getCityRealTimeTemp('Seattle');
 });
+
+
+//set default temp to Seattle's temp
+getCityRealTimeTemp('Seattle');
