@@ -1,0 +1,112 @@
+/* colors
+    sage #C3C88C
+    dark purple #30253E
+    russian green #638872
+    pewter blue #80B9B1
+    cambrige blue #94c7b4 */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+
+html {
+    background-color: #80B9B1;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #C3C88C;
+}
+
+header {
+    height: 60px;
+    font-family: "Neonderthaw", cursive;
+    font-weight: 400;
+    font-style: large, stretch;
+    text-align: center;
+    font-size: xx-large;
+    color: #C3C88C;
+    text-shadow:
+        1px 1px 2px #30253E,
+        0 0 1em #30253E,
+        0 0 0.2em #30253E;
+    padding: 10px;
+}
+
+
+h2 {
+    font-style: large, stretch;
+    text-align: center;
+    font-size: xx-large; 
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #30253E; 
+    padding: 10px;
+
+}
+
+h3 {
+    font-style: large, stretch;
+    text-align: center;
+    font-size: xx-large; 
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #30253E; 
+    padding: 10px;
+    background-color: #C3C88C;
+}
+
+input, button {
+    font-style: large, stretch;
+    text-align: center;
+    font-family: "Poiret One", sans-serif;
+    align-content: space-around;
+    align-items: stretch;
+}
+
+#sky {
+    font-style: large, stretch;
+    text-align: center;
+    font-family: "Poiret One", sans-serif;
+}
+
+#landscape-img {
+    width: auto;
+    height: auto; 
+    align-content: center;
+} 
+
+.container {
+    width: 50%; 
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #638872;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    align-content: space-around;
+    align-items: stretch;
+    font-size: medium; 
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #30253E;
+    align-content: center;
+}
+
+
+.highlight-text {
+    display: inline;
+    /* background: linear-gradient(to top, #30253E 100%, transparent 50%); */
+    padding: 0 4px;
+}
+
+.uniform-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}

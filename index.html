@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+</html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,15 +12,15 @@
 </head>
 <body>
     <header>
-        <h1 id="weather-header">Weather Report</h1>
+        <h1 id="weather-header" class="highlight-text">Weather Report</h1>
     </header>
 
     <main>
         <section id="greeting">
-            <h2 id="greeting-message">For the lovely city of <span id="current-city">Seattle</span>!</h2>
+            <h2 id="greeting-message">Today’s skies over the beautiful city of <span id="current-city">Seattle</span>!</h2>
         </section>
 
-        <section id="temperature">
+        <section id="temperature" class="container">
             <h3>Temperature</h3>
             <div>
                 <button id="decrease-temp">-</button>
@@ -29,7 +30,7 @@
             </div>
         </section>
 
-        <section id="sky">
+        <section id="sky" class="container">
             <h3>Sky</h3>
             <label for="sky-select">Choose a sky:</label>
             <select name="skys" id="sky-select">
@@ -42,7 +43,7 @@
             <div id="sky-emoji">☁️ ☁️ ☁️ ☀️ ☁️ ☁️</div>
         </section>
 
-        <section id="city-input">
+        <section id="city-input" class="container">
             <h3>City Name</h3>
             <label for="city-name">City</label>
             <input
@@ -56,13 +57,16 @@
             <button id="reset-city">Reset</button>
         </section>
 
-        <section id="landscape">
+        <section id="landscape" class="container">
             <h3>Feels Like</h3>
-            <img id="landscape-img" src="assets/cool .jpeg"></img>
+            <img id="landscape-img" class="uniform-image" src="assets/Humid.jpeg" ></img>
         </section>
     </main>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./src/index.js"></script>
+    <footer>
+    ⊚ Jeslyn & Natasha ⊚ 2025 Ada Developers Academy ⊚ Cohort 23 ⊚  
+    </footer>
 </body>
 </html>

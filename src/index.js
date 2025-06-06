@@ -29,7 +29,7 @@ const changeTempColor = () => {
         tempNumber.style.color = 'blue';
         landscapeImg.src = 'assets/perfect 2.jpg';
     } else if (currentTemp >= 50) {
-        tempNumber.style.color ='green';
+        tempNumber.style.color ='black';
         landscapeImg.src = 'assets/cool .jpeg';
     } else {
         tempNumber.style.color = 'teal';
@@ -100,11 +100,38 @@ realtimeTemperature.addEventListener('click',()=>{
 const skySelect = document.getElementById('sky-select');
 const skyEmoji = document.getElementById('sky-emoji');
 
+// skySelect.addEventListener("change", (event) => {
+//     if(event.target.value == 'Sunny'){skyEmoji.textContent = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';}
+//     else if(event.target.value == 'Cloudy'){skyEmoji.textContent = '☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️';}
+//     else if (event.target.value == 'Rainy'){skyEmoji.textContent = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';}
+//     else {skyEmoji.textContent = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨';}
+// });
+
 skySelect.addEventListener("change", (event) => {
-    if(event.target.value == 'Sunny'){skyEmoji.textContent = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';}
-    else if(event.target.value == 'Cloudy'){skyEmoji.textContent = '☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️';}
-    else if (event.target.value == 'Rainy'){skyEmoji.textContent = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';}
-    else {skyEmoji.textContent = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨';}
+  const weather = event.target.value;
+
+  let html = "";
+  let backgroundUrl = "";
+
+  if (weather === 'Sunny') {
+    html = `☀️ ☀️ ☀️`;
+    backgroundUrl = "url('assets/sunny.jpeg')";
+  } else if (weather === 'Cloudy') {
+    html = `☁️ ☁️ ☁️`;
+    backgroundUrl = "url('assets/cloudy3.jpeg')";
+  } else if (weather === 'Rainy') {
+    html = `🌧️ 🌧️ 🌧️`;
+    backgroundUrl = "url('assets/rain44.jpeg')";
+  } else {
+    html = `❄️ ❄️ ❄️`;
+    backgroundUrl = "url('assets/snow.jpeg')";
+  }
+
+  skyEmoji.innerHTML = html;
+  document.body.style.backgroundImage = backgroundUrl;
+  document.body.style.backgroundSize = "35% auto";  
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundPosition = "left";
 });
 
 //Wave 6
