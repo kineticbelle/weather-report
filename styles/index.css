@@ -115,3 +115,10 @@ input, button {
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+.center-align{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
