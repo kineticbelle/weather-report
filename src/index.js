@@ -18,6 +18,7 @@ document.getElementById('decrease-temp').addEventListener('click',()=>{
     changeTempColor();
 })
 
+//Feels like section is our landscape.
 const changeTempColor = () => {
     if (currentTemp >=80) {
         tempNumber.style.color = 'red';
@@ -27,7 +28,7 @@ const changeTempColor = () => {
         landscapeImg.src = 'assets/Humid.jpeg';
     } else if (currentTemp >= 60) {
         tempNumber.style.color = 'blue';
-        landscapeImg.src = 'assets/perfect 2.jpg';
+        landscapeImg.src = 'assets/perfect weather .jpeg';
     } else if (currentTemp >= 50) {
         tempNumber.style.color ='black';
         landscapeImg.src = 'assets/cool .jpeg';
@@ -37,12 +38,11 @@ const changeTempColor = () => {
     }
 }
 
-//Wave 3 & 4
+//Wave 3 & 4: 
 const currentCity = document.getElementById('current-city');
 const cityName = document.getElementById('city-name');
-const cityButton = document.getElementById('city-button');
 
-cityButton.addEventListener('click',()=>{
+cityName.addEventListener('input',()=>{
     currentCity.textContent = cityName.value;
     getCityRealTimeTemp(cityName.value);
 })
@@ -99,40 +99,53 @@ realtimeTemperature.addEventListener('click',()=>{
 //Wave 5
 const skySelect = document.getElementById('sky-select');
 const skyEmoji = document.getElementById('sky-emoji');
-
-// skySelect.addEventListener("change", (event) => {
-//     if(event.target.value == 'Sunny'){skyEmoji.textContent = '☁️ ☁️ ☁️ ☀️ ☁️ ☁️';}
-//     else if(event.target.value == 'Cloudy'){skyEmoji.textContent = '☁️☁️ ☁️ ☁️☁️ ☁️ 🌤 ☁️ ☁️☁️';}
-//     else if (event.target.value == 'Rainy'){skyEmoji.textContent = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';}
-//     else {skyEmoji.textContent = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨';}
-// });
+const skyImg = document.getElementById('sky-img');
 
 skySelect.addEventListener("change", (event) => {
-  const weather = event.target.value;
-
-  let html = "";
-  let backgroundUrl = "";
-
-  if (weather === 'Sunny') {
-    html = `☀️ ☀️ ☀️`;
-    backgroundUrl = "url('assets/sunny.jpeg')";
-  } else if (weather === 'Cloudy') {
-    html = `☁️ ☁️ ☁️`;
-    backgroundUrl = "url('assets/cloudy3.jpeg')";
-  } else if (weather === 'Rainy') {
-    html = `🌧️ 🌧️ 🌧️`;
-    backgroundUrl = "url('assets/rain44.jpeg')";
-  } else {
-    html = `❄️ ❄️ ❄️`;
-    backgroundUrl = "url('assets/snow.jpeg')";
-  }
-
-  skyEmoji.innerHTML = html;
-  document.body.style.backgroundImage = backgroundUrl;
-  document.body.style.backgroundSize = "35% auto";  
-  document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundPosition = "left";
+    if(event.target.value == 'Sunny'){
+        skyEmoji.textContent = '☀️ ☀️ ☀️';
+        skyImg.src = 'assets/sunny.jpeg';
+    }
+    else if(event.target.value == 'Cloudy'){
+        skyEmoji.textContent = '☁️ ☁️ ☁️';
+        skyImg.src = 'assets/cloudy3.jpeg';
+    }
+    else if (event.target.value == 'Rainy'){
+        skyEmoji.textContent = '🌧️ 🌧️ 🌧️';
+        skyImg.src = 'assets/rain44.jpeg';
+    }
+    else {
+        skyEmoji.textContent = '❄️ ❄️ ❄️';
+        skyImg.src = 'assets/snow.jpeg';
+    }
 });
+
+// skySelect.addEventListener("change", (event) => {
+//     const weather = event.target.value;
+
+//     let html = "";
+//     let backgroundUrl = "";
+
+//     if (weather === 'Sunny') {
+//         html = `☀️ ☀️ ☀️`;
+//         backgroundUrl = "url('assets/sunny.jpeg')";
+//     } else if (weather === 'Cloudy') {
+//         html = `☁️ ☁️ ☁️`;
+//         backgroundUrl = "url('assets/cloudy3.jpeg')";
+//     } else if (weather === 'Rainy') {
+//         html = `🌧️ 🌧️ 🌧️`;
+//         backgroundUrl = "url('assets/rain44.jpeg')";
+//     } else {
+//         html = `❄️ ❄️ ❄️`;
+//         backgroundUrl = "url('assets/snow.jpeg')";
+//     }
+
+//     skyEmoji.innerHTML = html;
+//     document.body.style.backgroundImage = backgroundUrl;
+//     document.body.style.backgroundSize = "35% auto";  
+//     document.body.style.backgroundRepeat = "no-repeat";
+//     document.body.style.backgroundPosition = "left";
+//     });
 
 //Wave 6
 const resetCity = document.getElementById('reset-city');

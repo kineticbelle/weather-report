@@ -24,37 +24,40 @@
             <h3>Temperature</h3>
             <div>
                 <button id="decrease-temp">-</button>
-                <span id="temp-number"></span>°F
+                <span id="temp-number" class="big-text"></span>°F
                 <button id="increase-temp">+</button>
-                <button id="realtime-temperature">Realtime Temperature</button>
+                <button id="realtime-temperature" class="big-text">Realtime Temperature</button>
             </div>
         </section>
 
         <section id="sky" class="container">
             <h3>Sky</h3>
-            <label for="sky-select">Choose a sky:</label>
-            <select name="skys" id="sky-select">
+            <label for="sky-select" class="big-text">Choose a sky:</label>
+            <select name="skys" id="sky-select" class="big-text">
             <option value="">--Please choose an option--</option>
             <option value="Sunny">Sunny</option>
             <option value="Cloudy">Cloudy</option>
             <option value="Rainy">Rainy</option>
             <option value="Snowy">Snowy</option>
             </select>
-            <div id="sky-emoji">☁️ ☁️ ☁️ ☀️ ☁️ ☁️</div>
+            <div id="sky-emoji" class="big-text">☀️ ☀️ ☀️</div>
+            <img id="sky-img" class="uniform-image" src="assets/sunny.jpeg" ></img>
+
         </section>
 
         <section id="city-input" class="container">
             <h3>City Name</h3>
-            <label for="city-name">City</label>
+            <label for="city-name" class="big-text">City</label>
             <input
                 type="text"
                 id="city-name"
+                class="big-text"
                 required
                 minlength="1"
                 maxlength="20"
                 size="10" />
-            <button id="city-button">Enter</button>
-            <button id="reset-city">Reset</button>
+            <!-- <button id="city-button" class="big-text">Enter</button> -->
+            <button id="reset-city" class="big-text">Reset</button>
         </section>
 
         <section id="landscape" class="container">

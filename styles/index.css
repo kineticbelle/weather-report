@@ -105,8 +105,13 @@ input, button {
 }
 
 .uniform-image {
-    width: 100%;
-    height: 100%;
+    width: 250px;;
+    height: 180px;
     display: block;
     margin: 0 auto;
+}
+
+.big-text {
+    font-size: 1.2rem;
+    font-weight: 500;
 }
