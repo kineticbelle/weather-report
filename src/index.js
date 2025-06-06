@@ -67,9 +67,6 @@ const getCityRealTimeTemp = (city) => {
             const lat = firstResponse.lat;
             const lon = firstResponse.lon;
 
-            // console.log(`lat = ${lat}`)
-            // console.log(`lon = ${lon}`)
-
             return axios.get('http://127.0.0.1:5000/weather', {
                 params: {
                     lat: lat,
@@ -119,33 +116,6 @@ skySelect.addEventListener("change", (event) => {
         skyImg.src = 'assets/snow.jpeg';
     }
 });
-
-// skySelect.addEventListener("change", (event) => {
-//     const weather = event.target.value;
-
-//     let html = "";
-//     let backgroundUrl = "";
-
-//     if (weather === 'Sunny') {
-//         html = `☀️ ☀️ ☀️`;
-//         backgroundUrl = "url('assets/sunny.jpeg')";
-//     } else if (weather === 'Cloudy') {
-//         html = `☁️ ☁️ ☁️`;
-//         backgroundUrl = "url('assets/cloudy3.jpeg')";
-//     } else if (weather === 'Rainy') {
-//         html = `🌧️ 🌧️ 🌧️`;
-//         backgroundUrl = "url('assets/rain44.jpeg')";
-//     } else {
-//         html = `❄️ ❄️ ❄️`;
-//         backgroundUrl = "url('assets/snow.jpeg')";
-//     }
-
-//     skyEmoji.innerHTML = html;
-//     document.body.style.backgroundImage = backgroundUrl;
-//     document.body.style.backgroundSize = "35% auto";  
-//     document.body.style.backgroundRepeat = "no-repeat";
-//     document.body.style.backgroundPosition = "left";
-//     });
 
 //Wave 6
 const resetCity = document.getElementById('reset-city');
